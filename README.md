@@ -4,7 +4,7 @@ Install and configure ntp on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-ntp/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-ntp/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-ntp/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-ntp)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/ntp)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/ntp)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-ntp.svg)](https://github.com/buluma/ansible-role-ntp/releases/)|
+|[![github](https://github.com/buluma/ansible-role-ntp/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-ntp/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-ntp/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-ntp)|[![quality](https://img.shields.io/ansible/quality/57978)](https://galaxy.ansible.com/buluma/ntp)|[![downloads](https://img.shields.io/ansible/role/d/57978)](https://galaxy.ansible.com/buluma/ntp)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-ntp.svg)](https://github.com/buluma/ansible-role-ntp/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -117,6 +117,7 @@ Some roles can't run on a specific distribution or version. Here are some except
 | alpine | /lib/rc/sh/openrc-run.sh: line 100: can't create /sys/fs/cgroup/systemd/tasks: Read-only file system |
 | opensuse | ConditionVirtualization=!container was not met |
 | debian:buster | Unable to restart service ntp: Job for ntp.service failed because the control process exited with error code. |
+| fedora:rawhide | Failed to find required executable "hwclock" in paths: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin |
 
 
 If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-ntp/issues)
