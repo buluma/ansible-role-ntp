@@ -20,7 +20,6 @@ galaxy_info:
         - all
     - name: Fedora
       versions:
-        - latest
         - 34
     - name: Ubuntu
       versions:
