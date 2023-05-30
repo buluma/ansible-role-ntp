@@ -4,8 +4,8 @@ galaxy_info:
   role_name: ntp
   description: Install and configure ntp on your system.
   license: Apache-2.0
-  company: ShadowNet
-  min_ansible_version: "2.10"
+  company: none
+  min_ansible_version: "2.12"
 
   platforms:
     - name: Amazon
@@ -19,11 +19,13 @@ galaxy_info:
         - all
     - name: Fedora
       versions:
-        - "34"
+        - all
     - name: Ubuntu
       versions:
         - all
-
+    - name: Kali
+      versions:
+        - all
   galaxy_tags:
     - ntp
     - ntpd
