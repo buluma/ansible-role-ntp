@@ -58,10 +58,13 @@ jobs:
             tag: "focal"
           - image: "docker-ubuntu-systemd"
             tag: "bionic"
+<<<<<<< HEAD
           - image: "docker-ubuntu-systemd"
             tag: "lunar"
           - image: "kali"
             tag: "latest"
+=======
+>>>>>>> 0489e186ea13a7bd3bb992a7e01fb72effc70c98
     steps:
       - name: checkout
         uses: actions/checkout@v4
