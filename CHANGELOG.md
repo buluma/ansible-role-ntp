@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-ntp/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-ntp/compare/1.0.8...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#15](https://github.com/buluma/ansible-role-ntp/issues/15)
+- Update action [\#14](https://github.com/buluma/ansible-role-ntp/issues/14)
+
 ## [1.0.8](https://github.com/buluma/ansible-role-ntp/tree/1.0.8) (2022-08-17)
 
 [Full Changelog](https://github.com/buluma/ansible-role-ntp/compare/1.0.7...1.0.8)
