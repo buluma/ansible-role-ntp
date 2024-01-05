@@ -105,7 +105,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
 |[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
 |[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
-|[Kali](https://hub.docker.com/repository/docker/buluma/kali/general)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 
