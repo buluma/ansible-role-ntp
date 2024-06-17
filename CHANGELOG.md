@@ -33,6 +33,7 @@
 **Merged pull requests:**
 
 - Bump actions/checkout from 3 to 4 [\#20](https://github.com/buluma/ansible-role-ntp/pull/20) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.5 to 1.0.8 [\#19](https://github.com/buluma/ansible-role-ntp/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.0.8](https://github.com/buluma/ansible-role-ntp/tree/1.0.8) (2022-08-17)
 
@@ -88,7 +89,6 @@
 
 **Merged pull requests:**
 
-- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.5 to 1.0.8 [\#19](https://github.com/buluma/ansible-role-ntp/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
 - pipeline fix [\#1](https://github.com/buluma/ansible-role-ntp/pull/1) ([buluma](https://github.com/buluma))
 
 
