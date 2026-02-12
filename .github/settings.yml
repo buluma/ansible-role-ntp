@@ -5,4 +5,4 @@
 repository:
   description: Install and configure ntp on your system.
   homepage: https://buluma.github.io/
-  topics: ntp, ntpd, ntpdate, ansible, molecule, tox, playbook
+  topics: ntp, ntpd, ntpdate, ansible, molecule, playbook
