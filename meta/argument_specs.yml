@@ -1,10 +1,10 @@
 ---
-
 argument_specs:
   main:
     short_description: "Install and configure ntp on your system."
     description: >
-      Install all required packages, configure required files and manage services to use NTP services.
+      Install all required packages, configure required files and manage services
+      to use NTP services.
     author: Michael Buluma
     options:
       ntp_state:
