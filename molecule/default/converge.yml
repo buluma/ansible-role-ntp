@@ -1,10 +1,10 @@
 ---
-  - name: Converge
-    hosts: all
-    become: true
-    gather_facts: true
+- name: Converge
+  hosts: all
+  become: true
+  gather_facts: true
 
-    roles:
-      - role: buluma.cron
-      - role: buluma.ntp
-        ntp_state: stopped
+  roles:
+  - role: buluma.cron
+  - role: buluma.ntp
+    ntp_state: stopped
