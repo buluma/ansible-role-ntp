@@ -12,9 +12,9 @@
       RedHat: &redhat_check_package []
       Rocky: *redhat_check_package
     ntp_check_packages:
-      "{{ _ntp_check_packages[ansible_facts.distribution ~ '-' ~ ansible_facts.distribution_major_version]
-      | default(_ntp_check_packages[ansible_facts.os_family ~ '-' ~ ansible_facts.distribution_major_version]
-      | default(_ntp_check_packages[ansible_facts.os_family] | default(_ntp_check_packages['default'])))
+      "{{ _ntp_check_packages[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']]
+      | default(_ntp_check_packages[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']]
+      | default(_ntp_check_packages[ansible_facts['os_family']] | default(_ntp_check_packages['default'])))
       }}"
     _ntp_check_command:
       default: ntpstat
@@ -24,9 +24,9 @@
       Rocky-8: *redhat_check_command
       Fedora: chronyc tracking
     ntp_check_command:
-      "{{ _ntp_check_command[ansible_facts.distribution ~ '-' ~ ansible_facts.distribution_major_version]
-      | default(_ntp_check_command[ansible_facts.os_family ~ '-' ~ ansible_facts.distribution_major_version]
-      | default(_ntp_check_command[ansible_facts.distribution] | default(_ntp_check_command['default'])))
+      "{{ _ntp_check_command[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']]
+      | default(_ntp_check_command[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']]
+      | default(_ntp_check_command[ansible_facts['distribution']] | default(_ntp_check_command['default'])))
       }}"
     _ntp_success_output:
       default: "synchronised to NTP server"
@@ -36,9 +36,9 @@
       Rocky-8: *redhat_success_output
       Fedora: "Leap status     : Normal"
     ntp_success_output:
-      "{{ _ntp_success_output[ansible_facts.distribution ~ '-' ~ ansible_facts.distribution_major_version]
-      | default(_ntp_success_output[ansible_facts.os_family ~ '-' ~ ansible_facts.distribution_major_version]
-      | default(_ntp_success_output[ansible_facts.distribution] | default(_ntp_success_output['default'])))
+      "{{ _ntp_success_output[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']]
+      | default(_ntp_success_output[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']]
+      | default(_ntp_success_output[ansible_facts['distribution']] | default(_ntp_success_output['default'])))
       }}"
     ntp_state: stopped
 
