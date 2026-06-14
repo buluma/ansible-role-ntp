@@ -17,6 +17,7 @@
       | default(_ntp_check_packages[ansible_facts['os_family']] | default(_ntp_check_packages['default'])))
       }}"
     _ntp_check_command:
+    changed_when: false
       default: ntpstat
       Amazon-2: chronyc tracking
       Amazon-2018: chronyc tracking
@@ -24,6 +25,7 @@
       Rocky-8: *redhat_check_command
       Fedora: chronyc tracking
     ntp_check_command:
+    changed_when: false
       "{{ _ntp_check_command[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']]
       | default(_ntp_check_command[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']]
       | default(_ntp_check_command[ansible_facts['distribution']] | default(_ntp_check_command['default'])))
@@ -51,6 +53,7 @@
 
     - name: check if time is synchronised
       ansible.builtin.command:
+      changed_when: false
         cmd: "{{ ntp_check_command }}"
       register: npt_check_time_synchronised
       failed_when:
