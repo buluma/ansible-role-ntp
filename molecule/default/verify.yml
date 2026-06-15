@@ -11,25 +11,15 @@
       Amazon-2: []
       RedHat: &redhat_check_package []
       Rocky: *redhat_check_package
-    ntp_check_packages:
-      "{{ _ntp_check_packages[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']]
-      | default(_ntp_check_packages[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']]
-      | default(_ntp_check_packages[ansible_facts['os_family']] | default(_ntp_check_packages['default'])))
-      }}"
+    ntp_check_packages: "{{ _ntp_check_packages[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_ntp_check_packages[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_ntp_check_packages[ansible_facts['os_family']] | default(_ntp_check_packages['default']))) }}"
     _ntp_check_command:
-    changed_when: false
       default: ntpstat
       Amazon-2: chronyc tracking
       Amazon-2018: chronyc tracking
       RedHat-8: &redhat_check_command chronyc tracking
       Rocky-8: *redhat_check_command
       Fedora: chronyc tracking
-    ntp_check_command:
-    changed_when: false
-      "{{ _ntp_check_command[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']]
-      | default(_ntp_check_command[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']]
-      | default(_ntp_check_command[ansible_facts['distribution']] | default(_ntp_check_command['default'])))
-      }}"
+    ntp_check_command: "{{ _ntp_check_command[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_ntp_check_command[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_ntp_check_command[ansible_facts['distribution']] | default(_ntp_check_command['default']))) }}"
     _ntp_success_output:
       default: "synchronised to NTP server"
       Amazon-2: "Leap status     : Normal"
@@ -37,11 +27,7 @@
       RedHat-8: &redhat_success_output "Leap status     : Normal"
       Rocky-8: *redhat_success_output
       Fedora: "Leap status     : Normal"
-    ntp_success_output:
-      "{{ _ntp_success_output[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']]
-      | default(_ntp_success_output[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']]
-      | default(_ntp_success_output[ansible_facts['distribution']] | default(_ntp_success_output['default'])))
-      }}"
+    ntp_success_output: "{{ _ntp_success_output[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_ntp_success_output[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_ntp_success_output[ansible_facts['distribution']] | default(_ntp_success_output['default']))) }}"
     ntp_state: stopped
 
   tasks:
@@ -53,12 +39,11 @@
 
     - name: check if time is synchronised
       ansible.builtin.command:
-      changed_when: false
         cmd: "{{ ntp_check_command }}"
+      changed_when: false
       register: npt_check_time_synchronised
       failed_when:
         - ntp_success_output not in npt_check_time_synchronised.stdout
-      changed_when: false
       until:
         - npt_check_time_synchronised is succeeded
       retries: 16
